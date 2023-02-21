@@ -1,0 +1,52 @@
+#!/usr/bin/bash
+
+# Permissions
+sudo chmod 777 *
+sudo chmod 777 * -R
+
+echo ""
+echo "---------------------------"
+echo "Installing Requirements..."
+echo "---------------------------"
+echo ""
+echo ""
+echo ""
+echo "Making sure Python3 with PIP is installed..."
+echo "----------------------------------------------------------------------------------------------------------------"
+echo ""
+sudo apt install python3 -y
+sudo apt install python3-pip -y
+echo ""
+echo ""
+echo ""
+echo "Installing Modules..."
+echo "----------------------------------------------------------------------------------------------------------------"
+echo ""
+sudo pip3 install -r core/requirements.txt
+echo ""
+echo ""
+echo ""
+echo "Installing Chrome browser..."
+echo "----------------------------------------------------------------------------------------------------------------"
+echo ""
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb -y
+rm *.deb
+echo ""
+echo ""
+echo ""
+echo "Installing Tor..."
+echo "----------------------------------------------------------------------------------------------------------------"
+echo the installation will proceed automatically.
+sudo apt install -y tor
+sudo apt install -y netcat
+sudo service tor start
+echo ""
+echo ""
+echo ""
+
+sudo chmod 777 *
+sudo chmod 777 * -R
+
+echo "All the requirements have been installed"
+echo ""
