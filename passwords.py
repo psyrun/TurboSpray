@@ -7,8 +7,6 @@ from core.all_functions import *
 from datetime import datetime
 # Colors
 G, B, R, W, M, C, end = '\033[92m', '\033[94m', '\033[91m', '\x1b[37m', '\x1b[35m', '\x1b[36m', '\033[0m'
-info = end + W + "[-]" + W
-good = end + G + "[+]" + C
 bad = end + R + "[" + W + "!" + R + "]"
 
 banner()
@@ -31,7 +29,7 @@ if __name__ == '__main__':
 	parser.add_argument("-o", "--output", type=str, default="txt", help="Output type: TXT-CSV-JSON")
 	args = parser.parse_args()
 
-	if not args.option and args.company:
+	if not args.option and not args.company:
 		parser.print_help()
 		print(bad + " Missing parameters!" + end)
 		exit(-1)
